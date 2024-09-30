@@ -23,12 +23,8 @@ Testing the server and client
 ### Server code:
 ```
 import socket
-
-
-HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
-PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
-
-
+HOST = "127.0.0.1" 
+PORT = 65432
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen()
@@ -44,27 +40,24 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 ### Client code:
 ```
 import socket
-
-
-HOST = "127.0.0.1"  # The server's hostname or IP address
-PORT = 65432  # The port used by the server
-
-
+HOST = "127.0.0.1"
+PORT = 65432
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.connect((HOST, PORT))
-    s.sendall(b"Hello, world")
+    s.connect((HOST, PORT)) 
+    s.sendall(b"Sheetal.R,")
+    s.sendall(b"212223230206")
     data = s.recv(1024)
-
-
-print(f"Received {data!r}")
+print(f"\nRecived {data!r}") 
 ```
 
 ## OUTPUT:
 ### Server side:
-![image](https://github.com/user-attachments/assets/f5b538e5-1fc2-4d8f-92f5-5e938d91dba9)
+![Screenshot 2024-09-30 100524](https://github.com/user-attachments/assets/3845d080-509a-4e2f-b996-f43557c9e6b9)
+
 
 ### Client side:
-![image](https://github.com/user-attachments/assets/620f4b55-9c4b-4afb-bbe7-2c6a5326496c)
+![Screenshot 2024-09-30 100445](https://github.com/user-attachments/assets/d98869e9-c329-4526-88c7-9751f5233661)
+
 
 
 
